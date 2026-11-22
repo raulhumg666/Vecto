@@ -15,7 +15,7 @@ jobs:
         with:
           gradle-version: 8.7
       - name: Descomprimir proyecto
-        run: unzip -q Vectorizador-Android.zip
+        run: unzip -q "$(ls Vectorizador-v*.zip | sort -V | tail -1)"
       - name: Compilar APK
         working-directory: Vectorizador
         run: gradle assembleDebug --no-daemon
